@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/app/components/Button";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -64,13 +65,13 @@ export default function CreateForm() {
 					<option value="high">High Priority</option>
 				</select>
 			</label>
-			<button className="btn-primary" disabled={isLoading}>
+			<Button className="btn-primary" disabled={isLoading} animated>
 				{isLoading && <span>Adding...</span>}
 				{!isLoading && <span>Add Ticket</span>}
-			</button>
-			<button onClick={() => router.back()} className="btn-secondary">
+			</Button>
+			<Button onClick={() => router.back()} animated>
 				{<span>Go back</span>}
-			</button>
+			</Button>
 		</form>
 	);
 }

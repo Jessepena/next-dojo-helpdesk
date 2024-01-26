@@ -1,3 +1,4 @@
+import Button from "@/app/components/Button";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -26,15 +27,15 @@ export default async function TicketDetails({ params }) {
 	const ticket = await getTicket(params.id);
 	return (
 		<main>
+			<div className="flex justify-between">
+				<Link href="/tickets">
+					<Button className="btn-primary" animated>
+						{`<`} Go back
+					</Button>
+				</Link>
+			</div>
 			<nav>
-				<div>
-					<h2>Ticket details</h2>
-					<div>
-						<Link href="/">
-							<button className="btn-primary">Go back</button>
-						</Link>
-					</div>
-				</div>
+				<h2>Ticket details</h2>
 			</nav>
 			<div className="card">
 				<h3>{ticket.title}</h3>

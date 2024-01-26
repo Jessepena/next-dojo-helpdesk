@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Logo from "./dojo-logo.png";
 import { NavLink } from "./NavLink";
+import ThemeHandler from "./ThemeHandler";
 
 export default function Navbar() {
 	return (
@@ -12,10 +13,13 @@ export default function Navbar() {
 				placeholder="blur"
 				quality={100}
 			/>
-			<h1>Dojo Helpdesk</h1>
+			<NavLink href="/">
+				<h1>Jesse's Helpdesk</h1>
+			</NavLink>
 			<NavLink href="/">Dashboard</NavLink>
 			<NavLink href="/tickets">Tickets</NavLink>
-			<NavLink href="/create">Create</NavLink>
+			<NavLink href="/tickets/create">Create</NavLink>
+			<ThemeHandler />
 		</nav>
 	);
 }
